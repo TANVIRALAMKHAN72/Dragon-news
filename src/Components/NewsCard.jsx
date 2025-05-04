@@ -17,9 +17,11 @@ import React from 'react';
 import { FaEye, FaStar } from 'react-icons/fa';
 import { IoShareSocialOutline } from "react-icons/io5";
 import { FaRegBookmark } from "react-icons/fa";
+import { Link } from 'react-router';
 
 const NewsCard = ({ news }) => {
   const {
+    id,
     title,
     image_url,
     details,
@@ -55,7 +57,7 @@ const NewsCard = ({ news }) => {
           {details.length > 150 ? (
             <>
               {details.slice(0, 150)}...
-              <span className="text-orange-300 font-semibold ml-1">Read More</span>
+              <Link to={`/news-details/${id}`} className="text-orange-300 font-semibold ml-1">Read More</Link>
             </>
           ) : (
             details
